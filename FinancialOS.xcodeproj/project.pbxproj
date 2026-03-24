@@ -6,17 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DBBA9E362F70E72D00461928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBA9E302F70E72D00461928 /* Assets.xcassets */; };
+		DBBA9E452F70E7A700461928 /* FinancialOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E442F70E7A700461928 /* FinancialOSApp.swift */; };
+		DBBA9E472F70E7B700461928 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E462F70E7B700461928 /* Models.swift */; };
+		DBBA9E492F70E7CB00461928 /* AgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E482F70E7CB00461928 /* AgendaView.swift */; };
+		DBBA9E4B2F70E7D400461928 /* SafeSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E4A2F70E7D400461928 /* SafeSpaceView.swift */; };
+		DBBA9E4D2F70E7E100461928 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E4C2F70E7E100461928 /* DashboardView.swift */; };
+		DBBA9E4F2F70E7ED00461928 /* WorkplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E4E2F70E7ED00461928 /* WorkplaceView.swift */; };
+		DBBA9E512F70E7FC00461928 /* GrowthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E502F70E7FC00461928 /* GrowthView.swift */; };
+		DBBA9E532F70E81700461928 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E522F70E81700461928 /* OnboardingView.swift */; };
+		DBBA9E552F70E82700461928 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E542F70E82700461928 /* LandingView.swift */; };
+		DBBA9E572F70E84400461928 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E562F70E84400461928 /* Services.swift */; };
+		DBBA9E592F70E85000461928 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E582F70E85000461928 /* Theme.swift */; };
+		DBBA9E5B2F70E86300461928 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E5A2F70E86300461928 /* ViewModels.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DBBA9E212F70E64600461928 /* FinancialOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBA9E302F70E72D00461928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBBA9E442F70E7A700461928 /* FinancialOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOSApp.swift; sourceTree = "<group>"; };
+		DBBA9E462F70E7B700461928 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DBBA9E482F70E7CB00461928 /* AgendaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaView.swift; sourceTree = "<group>"; };
+		DBBA9E4A2F70E7D400461928 /* SafeSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeSpaceView.swift; sourceTree = "<group>"; };
+		DBBA9E4C2F70E7E100461928 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		DBBA9E4E2F70E7ED00461928 /* WorkplaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkplaceView.swift; sourceTree = "<group>"; };
+		DBBA9E502F70E7FC00461928 /* GrowthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthView.swift; sourceTree = "<group>"; };
+		DBBA9E522F70E81700461928 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DBBA9E542F70E82700461928 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		DBBA9E562F70E84400461928 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		DBBA9E582F70E85000461928 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DBBA9E5A2F70E86300461928 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		DBBA9E232F70E64600461928 /* FinancialOS */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FinancialOS;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DBBA9E1E2F70E64600461928 /* Frameworks */ = {
@@ -32,7 +53,7 @@
 		DBBA9E182F70E64600461928 = {
 			isa = PBXGroup;
 			children = (
-				DBBA9E232F70E64600461928 /* FinancialOS */,
+				DBBA9E332F70E72D00461928 /* FinancialOS */,
 				DBBA9E222F70E64600461928 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +64,130 @@
 				DBBA9E212F70E64600461928 /* FinancialOS.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DBBA9E332F70E72D00461928 /* FinancialOS */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E3C2F70E75200461928 /* Extensions */,
+				DBBA9E3B2F70E74700461928 /* Services */,
+				DBBA9E3A2F70E74100461928 /* Views */,
+				DBBA9E392F70E73B00461928 /* ViewModels */,
+				DBBA9E382F70E73600461928 /* Models */,
+				DBBA9E372F70E73000461928 /* App */,
+				DBBA9E302F70E72D00461928 /* Assets.xcassets */,
+			);
+			path = FinancialOS;
+			sourceTree = "<group>";
+		};
+		DBBA9E372F70E73000461928 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E442F70E7A700461928 /* FinancialOSApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DBBA9E382F70E73600461928 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E462F70E7B700461928 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBBA9E392F70E73B00461928 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E5A2F70E86300461928 /* ViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DBBA9E3A2F70E74100461928 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E432F70E77900461928 /* AI */,
+				DBBA9E422F70E77200461928 /* Growth */,
+				DBBA9E412F70E76D00461928 /* Calendar */,
+				DBBA9E402F70E76800461928 /* Workplace */,
+				DBBA9E3F2F70E76400461928 /* Dashboard */,
+				DBBA9E3E2F70E75F00461928 /* Onboarding */,
+				DBBA9E3D2F70E75A00461928 /* Landing */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBBA9E3B2F70E74700461928 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E562F70E84400461928 /* Services.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DBBA9E3C2F70E75200461928 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E582F70E85000461928 /* Theme.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DBBA9E3D2F70E75A00461928 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E542F70E82700461928 /* LandingView.swift */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		DBBA9E3E2F70E75F00461928 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E522F70E81700461928 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DBBA9E3F2F70E76400461928 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E4C2F70E7E100461928 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		DBBA9E402F70E76800461928 /* Workplace */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E4E2F70E7ED00461928 /* WorkplaceView.swift */,
+			);
+			path = Workplace;
+			sourceTree = "<group>";
+		};
+		DBBA9E412F70E76D00461928 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E482F70E7CB00461928 /* AgendaView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		DBBA9E422F70E77200461928 /* Growth */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E502F70E7FC00461928 /* GrowthView.swift */,
+			);
+			path = Growth;
+			sourceTree = "<group>";
+		};
+		DBBA9E432F70E77900461928 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA9E4A2F70E7D400461928 /* SafeSpaceView.swift */,
+			);
+			path = AI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +204,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				DBBA9E232F70E64600461928 /* FinancialOS */,
 			);
 			name = FinancialOS;
 			packageProductDependencies = (
@@ -109,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBA9E362F70E72D00461928 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBBA9E572F70E84400461928 /* Services.swift in Sources */,
+				DBBA9E512F70E7FC00461928 /* GrowthView.swift in Sources */,
+				DBBA9E4F2F70E7ED00461928 /* WorkplaceView.swift in Sources */,
+				DBBA9E592F70E85000461928 /* Theme.swift in Sources */,
+				DBBA9E532F70E81700461928 /* OnboardingView.swift in Sources */,
+				DBBA9E492F70E7CB00461928 /* AgendaView.swift in Sources */,
+				DBBA9E4D2F70E7E100461928 /* DashboardView.swift in Sources */,
+				DBBA9E452F70E7A700461928 /* FinancialOSApp.swift in Sources */,
+				DBBA9E4B2F70E7D400461928 /* SafeSpaceView.swift in Sources */,
+				DBBA9E552F70E82700461928 /* LandingView.swift in Sources */,
+				DBBA9E5B2F70E86300461928 /* ViewModels.swift in Sources */,
+				DBBA9E472F70E7B700461928 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +416,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,6 +449,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
