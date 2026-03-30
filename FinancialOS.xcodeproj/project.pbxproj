@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB5FA7102F761ABE00E8F5FD /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5FA70F2F761ABE00E8F5FD /* AccountView.swift */; };
 		DBBA9E362F70E72D00461928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBA9E302F70E72D00461928 /* Assets.xcassets */; };
 		DBBA9E452F70E7A700461928 /* FinancialOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E442F70E7A700461928 /* FinancialOSApp.swift */; };
 		DBBA9E472F70E7B700461928 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA9E462F70E7B700461928 /* Models.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB5FA70F2F761ABE00E8F5FD /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		DBBA9E212F70E64600461928 /* FinancialOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBA9E302F70E72D00461928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBBA9E442F70E7A700461928 /* FinancialOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOSApp.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB5FA70E2F761AAC00E8F5FD /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DB5FA70F2F761ABE00E8F5FD /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		DBBA9E182F70E64600461928 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		DBBA9E3A2F70E74100461928 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB5FA70E2F761AAC00E8F5FD /* Account */,
 				DBBA9E432F70E77900461928 /* AI */,
 				DBBA9E422F70E77200461928 /* Growth */,
 				DBBA9E412F70E76D00461928 /* Calendar */,
@@ -273,6 +284,7 @@
 				DBBA9E4B2F70E7D400461928 /* SafeSpaceView.swift in Sources */,
 				DBBA9E552F70E82700461928 /* LandingView.swift in Sources */,
 				DBBA9E5B2F70E86300461928 /* ViewModels.swift in Sources */,
+				DB5FA7102F761ABE00E8F5FD /* AccountView.swift in Sources */,
 				DBBA9E472F70E7B700461928 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
