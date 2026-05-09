@@ -2,8 +2,9 @@
 import SwiftUI
 struct SafeSpaceView: View {
     @EnvironmentObject var appState: AppState; @EnvironmentObject var workVM: WorkplaceVM; @EnvironmentObject var agendaVM: AgendaVM
+    @EnvironmentObject var themeManager: ThemeManager
     @StateObject private var vm = AIChatVM(); @FocusState private var focused: Bool
-    private var fr: Bool { ThemeManager.shared.language == .fr }
+    private var fr: Bool { themeManager.language == .fr }
     var body: some View {
         VStack(spacing: 0) {
             HStack { Spacer(); Text("V2").font(AppFont.label(10)).foregroundStyle(Color.theme.accent).padding(.horizontal, 8).padding(.vertical, 2).background(Capsule().fill(Color.theme.accentSoft)).padding(.trailing, 20).padding(.top, 4) }

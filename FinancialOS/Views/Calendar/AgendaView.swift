@@ -2,7 +2,8 @@
 import SwiftUI
 struct AgendaView: View {
     @EnvironmentObject var vm: AgendaVM; @EnvironmentObject var appState: AppState
-    private var fr: Bool { ThemeManager.shared.language == .fr }
+    @EnvironmentObject var themeManager: ThemeManager
+    private var fr: Bool { themeManager.language == .fr }
     var body: some View {
         ScrollView(showsIndicators: false) { VStack(spacing: 18) { summaryRow; predictionCard; periodFilter; calendarGrid; dateDetail; upcomingSection; allBillsList }.padding(.bottom, 40) }
         .background(Color.theme.background).navigationTitle(L10n.agenda)
@@ -12,9 +13,39 @@ struct AgendaView: View {
     }
     // MARK: - Summary
     private var summaryRow: some View {
-        HStack(spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) { Text(L10n.monthlyBills).sectionLabel(); Text(vm.monthlyTotal.asCurrency).font(AppFont.currency(26)).foregroundStyle(Color.theme.primary) }; Spacer()
-            VStack(alignment: .trailing, spacing: 4) { Text(L10n.upcoming).sectionLabel(); Text("\(vm.upcomingBills.count) \(fr ? "factures" : "bills")").font(AppFont.heading()).foregroundStyle(Color.theme.accent) }
+        VStack(spacing: 14) {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(L10n.monthlyBills).sectionLabel()
+                    Text(vm.monthlyTotal.asCurrency).font(AppFont.currency(26)).foregroundStyle(Color.theme.textPrimary)
+                }
+                Spacer()
+                VStack(alignment: .trailing, spacing: 4) {
+                    Text(fr ? "RESTANT" : "REMAINING").sectionLabel()
+                    Text(vm.monthlyRemaining.asCurrency).font(AppFont.currency(22))
+                        .foregroundStyle(vm.monthlyRemaining > 0 ? Color.theme.danger : Color.theme.success)
+                }
+            }
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    RoundedRectangle(cornerRadius: 4).fill(Color.theme.surfaceAlt).frame(height: 8)
+                    RoundedRectangle(cornerRadius: 4).fill(Color.theme.success)
+                        .frame(width: geo.size.width * vm.paymentProgress, height: 8)
+                }
+            }.frame(height: 8)
+            HStack {
+                HStack(spacing: 5) {
+                    Circle().fill(Color.theme.success).frame(width: 8, height: 8)
+                    Text("\(fr ? "Payé" : "Paid"): \(vm.monthlyPaid.asCurrency)")
+                        .font(AppFont.caption(12)).foregroundStyle(Color.theme.textSecondary)
+                }
+                Spacer()
+                HStack(spacing: 5) {
+                    Circle().fill(Color.theme.surfaceAlt).frame(width: 8, height: 8)
+                    Text("\(vm.paidBillsCount)/\(vm.bills.count) \(fr ? "factures" : "bills")")
+                        .font(AppFont.caption(12)).foregroundStyle(Color.theme.textSecondary)
+                }
+            }
         }.padding(18).card().padding(.horizontal, 20)
     }
     // MARK: - Prediction
@@ -42,7 +73,7 @@ struct AgendaView: View {
             HStack { Button { vm.prevMonth() } label: { Image(systemName: "chevron.left").foregroundStyle(Color.theme.textSecondary) }; Spacer()
                 Text(vm.currentMonth.monthYear).font(AppFont.subhead()); Spacer()
                 Button { vm.nextMonth() } label: { Image(systemName: "chevron.right").foregroundStyle(Color.theme.textSecondary) } }
-            HStack { ForEach(["S","M","T","W","T","F","S"], id: \.self) { d in Text(d).font(AppFont.caption(11)).foregroundStyle(Color.theme.textTertiary).frame(maxWidth: .infinity) } }
+            HStack { ForEach(Array(L10n.weekdayLetters.enumerated()), id: \.offset) { _, d in Text(d).font(AppFont.caption(11)).foregroundStyle(Color.theme.textTertiary).frame(maxWidth: .infinity) } }
             let days = calDays
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 3), count: 7), spacing: 5) {
                 ForEach(days, id: \.self) { d in if let date = d { dayCell(date) } else { Color.clear.frame(height: 40) } }
@@ -119,8 +150,8 @@ struct AgendaView: View {
     }
     private func urgBadge(_ b: CalendarBill) -> some View {
         let d = b.nextDueDate.daysFromNow; let t: String; let c: Color
-        switch b.urgencyLevel { case .overdue: t = L10n.overdue; c = Color.theme.danger; case .urgent: t = d==0 ? L10n.today : "\(d)j"; c = Color.theme.danger
-        case .soon: t = "\(d)j"; c = Color.theme.warning; case .normal: t = "\(d)j"; c = Color.theme.textTertiary }
+        switch b.urgencyLevel { case .overdue: t = L10n.overdue; c = Color.theme.danger; case .urgent: t = d==0 ? L10n.today : L10n.daysLabel(d); c = Color.theme.danger
+        case .soon: t = L10n.daysLabel(d); c = Color.theme.warning; case .normal: t = L10n.daysLabel(d); c = Color.theme.textTertiary }
         return Text(t).font(AppFont.caption(10)).foregroundStyle(c).padding(.horizontal, 5).padding(.vertical, 2).background(Capsule().fill(c.opacity(0.1)))
     }
     private func catColor(_ c: BillCategory) -> Color {

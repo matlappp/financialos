@@ -43,7 +43,7 @@ struct L10n {
     static var lang: AppLanguage { ThemeManager.shared.language }
     
     // Navigation
-    static var roadmap: String { lang == .fr ? "AI Roadmap" : "AI Roadmap" }
+    static var roadmap: String { lang == .fr ? "Plan IA" : "AI Roadmap" }
     static var workplace: String { lang == .fr ? "Espace de travail" : "Workplace" }
     static var agenda: String { lang == .fr ? "Agenda" : "Agenda" }
     static var growth: String { lang == .fr ? "Croissance" : "Growth" }
@@ -142,6 +142,10 @@ struct L10n {
     static var manualEntry: String { lang == .fr ? "Saisie manuelle" : "Manual Entry" }
     static var linkBank: String { lang == .fr ? "Lier ma banque" : "Link Bank Account" }
     static var bankIntegration: String { lang == .fr ? "Intégration Bancaire" : "Bank Integration" }
+    static var more: String { lang == .fr ? "Plus" : "More" }
+    static var projectManagement: String { lang == .fr ? "Gestion de Projet" : "Project Management" }
+    static var weekdayLetters: [String] { lang == .fr ? ["D","L","M","M","J","V","S"] : ["S","M","T","W","T","F","S"] }
+    static func daysLabel(_ n: Int) -> String { lang == .fr ? "\(n)j" : "\(n)d" }
 }
 
 // MARK: - Color Theme
@@ -187,7 +191,10 @@ struct ThemeColors {
         LinearGradient(colors: [Color(hex: "0D1B6F"), Color(hex: "1E3A8A")], startPoint: .top, endPoint: .bottom)
     }
     var cardGradient: LinearGradient {
-        LinearGradient(colors: [Color(hex: "1E293B"), Color(hex: "0F172A")], startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(
+            colors: dm ? [Color(hex: "1E293B"), Color(hex: "0F172A")] : [Color(hex: "0D1B6F"), Color(hex: "1E3A8A")],
+            startPoint: .topLeading, endPoint: .bottomTrailing
+        )
     }
     
     func categoryColor(for cat: SpendingCategory) -> Color {

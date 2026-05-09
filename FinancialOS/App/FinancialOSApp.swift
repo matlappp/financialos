@@ -40,10 +40,9 @@ struct MainTabView: View {
             NavigationStack { DashboardView() }.tabItem { Label(L10n.roadmap, systemImage: "square.grid.2x2.fill") }.tag(AppTab.roadmap)
             NavigationStack { WorkplaceView() }.tabItem { Label(L10n.workplace, systemImage: "bolt.fill") }.tag(AppTab.workplace).environmentObject(workVM)
             NavigationStack { AgendaView() }.tabItem { Label(L10n.agenda, systemImage: "calendar") }.tag(AppTab.agenda).environmentObject(agendaVM)
-            NavigationStack { GrowthView() }.tabItem { Label(L10n.growth, systemImage: "chart.line.uptrend.xyaxis") }.tag(AppTab.growth)
             NavigationStack { SafeSpaceView().environmentObject(workVM).environmentObject(agendaVM) }
                 .tabItem { Label(L10n.safeSpace, systemImage: "shield.fill") }.tag(AppTab.safeSpace)
-            NavigationStack { AccountView() }.tabItem { Label(L10n.account, systemImage: "person.circle.fill") }.tag(AppTab.account)
+            NavigationStack { MoreView() }.tabItem { Label(L10n.more, systemImage: "ellipsis.circle.fill") }.tag(AppTab.more)
         }
         .tint(Color.theme.accent)
         .onAppear { NotificationService.shared.requestPermission() }

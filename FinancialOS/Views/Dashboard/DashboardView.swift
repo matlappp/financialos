@@ -2,7 +2,8 @@
 import SwiftUI
 struct DashboardView: View {
     @EnvironmentObject var appState: AppState; @StateObject private var vm = DashboardVM()
-    private var fr: Bool { ThemeManager.shared.language == .fr }
+    @EnvironmentObject var themeManager: ThemeManager
+    private var fr: Bool { themeManager.language == .fr }
     var body: some View {
         ScrollView(showsIndicators: false) { VStack(spacing: 18) { if let p = appState.plan { setupCard; heroCard(p); savingsTimeline(p); budgetBreakdown(p); recs(p) } }.padding(.bottom, 40) }
         .background(Color.theme.background).navigationTitle("")

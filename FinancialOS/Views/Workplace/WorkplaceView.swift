@@ -1,7 +1,9 @@
 // WorkplaceView.swift — Enhanced: bigger summary cards, scrollable categories, visual %
 import SwiftUI
 struct WorkplaceView: View {
-    @EnvironmentObject var vm: WorkplaceVM; private var fr: Bool { ThemeManager.shared.language == .fr }
+    @EnvironmentObject var vm: WorkplaceVM
+    @EnvironmentObject var themeManager: ThemeManager
+    private var fr: Bool { themeManager.language == .fr }
     var body: some View {
         ScrollView(showsIndicators: false) { VStack(spacing: 18) { summaryCards; periodSelector; categoryChart; billAutoDeductInfo; categoryScroll; transactionList }.padding(.bottom, 40) }
         .background(Color.theme.background).navigationTitle(L10n.workplace)

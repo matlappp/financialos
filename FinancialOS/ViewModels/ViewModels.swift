@@ -32,19 +32,19 @@ class AppState: ObservableObject {
 
 enum AppScreen { case landing, onboarding, main }
 enum AppTab: Int, CaseIterable {
-    case roadmap = 0, workplace, agenda, growth, safeSpace, account
+    case roadmap = 0, workplace, agenda, safeSpace, more
     var title: String {
         switch self {
         case .roadmap: return L10n.roadmap; case .workplace: return L10n.workplace
-        case .agenda: return L10n.agenda; case .growth: return L10n.growth
-        case .safeSpace: return L10n.safeSpace; case .account: return L10n.account
+        case .agenda: return L10n.agenda; case .safeSpace: return L10n.safeSpace
+        case .more: return L10n.more
         }
     }
     var icon: String {
         switch self {
         case .roadmap: return "square.grid.2x2.fill"; case .workplace: return "bolt.fill"
-        case .agenda: return "calendar"; case .growth: return "chart.line.uptrend.xyaxis"
-        case .safeSpace: return "shield.fill"; case .account: return "person.circle.fill"
+        case .agenda: return "calendar"; case .safeSpace: return "shield.fill"
+        case .more: return "ellipsis.circle.fill"
         }
     }
 }
@@ -291,7 +291,12 @@ class AgendaVM: ObservableObject {
     func save() { DataStore.shared.save(bills, key: "bills") }
     func prevMonth() { currentMonth = Calendar.current.date(byAdding: .month, value: -1, to: currentMonth) ?? currentMonth }
     func nextMonth() { currentMonth = Calendar.current.date(byAdding: .month, value: 1, to: currentMonth) ?? currentMonth }
-    
+
+    var monthlyPaid: Double { bills.filter { $0.isPaid }.reduce(0) { $0 + $1.amount } }
+    var monthlyRemaining: Double { max(0, monthlyTotal - monthlyPaid) }
+    var paidBillsCount: Int { bills.filter { $0.isPaid }.count }
+    var paymentProgress: Double { monthlyTotal > 0 ? min(monthlyPaid / monthlyTotal, 1.0) : 0 }
+
     static func sampleBills() -> [CalendarBill] {
         let c = Calendar.current; let n = Date()
         return [
